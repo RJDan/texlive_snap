@@ -1,6 +1,6 @@
 name: rjd-texlive
 title: Texlive
-version: "2022"
+version: "2023"
 summary:  TexLive (NucciTheBoss clone)
 description: |
       "The basic scheme of TexLive in a snap! This is a clone of the snap: https://github.com/NucciTheBoss/texlive."
@@ -29,7 +29,7 @@ architectures:
 compression: lzo
 
 environment:
-  PATH: ${SNAP}/usr/local/texlive/2022/bin/${SNAPCRAFT_ARCH_TRIPLET}:$PATH
+  PATH: ${SNAP}/usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}:$PATH
   MANPATH: $SNAP/texmf-dist/doc/man:/usr/local/share/man:$MANPATH
   INFOPATH: $SNAP/texmf-dist/doc/info:/usr/local/share/info:$INFOPATH
   TEXDIR: $SNAP
@@ -38,12 +38,16 @@ environment:
   TEXMFSYSVAR: $SNAP/texmf-var
   TEXMFHOME: $HOME/texmf
   TEXMFCONFIG: $HOME/.texlive$SNAP_VERSION/texmf-config
-  TEXMFVAR: $HOME/.texlive2022$SNAP_VERSION/texmf-var
-  
+  TEXMFVAR: $HOME/.texlive2023$SNAP_VERSION/texmf-var
+
+layout:
+    ${SNAP}/usr/local/texlive/2023/bin/x86_64-linux:
+        bind: ${SNAP}/usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}
+
 slots:
     rjd-texlive:
         interface: content
-        content: rjd-texlive-0-2022-2204
+        content: rjd-texlive-0-2023-2204
         read: 
             - $SNAP/rjd-texlive
 
@@ -436,7 +440,9 @@ parts:
     - texlive-lang-japanese
     override-build: |
       craftctl default
-      wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+      #TARGET=https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2022/install-tl-unx.tar.gz
+      TARGET=https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2023/install-tl-unx.tar.gz
+      wget ${TARGET}
       zcat install-tl-unx.tar.gz | tar xf -
       rm install-tl-unx.tar.gz
       cd install-tl-*
