@@ -1,15 +1,31 @@
-name: texlive-basic
+name: rjd-texlive
+title: Texlive
 version: "2022"
-license: LPPL-1.2
-summary: TexLive - the basic scheme.
+summary:  TexLive (NucciTheBoss clone)
 description: |
-  The basic scheme of TexLive in a snap!
-  Installation guide available here: https://github.com/NucciTheBoss/texlive
-website: https://github.com/NucciTheBoss/texlive
+      "The basic scheme of TexLive in a snap! This is a clone of the snap: https://github.com/NucciTheBoss/texlive."
+      *  The description above refers to the software: https://mirror.ctan.org/systems/texlive/tlnet/
+      * I have packaged the software as a snap for **personal use** but I have made the snap available for free. It can be used as a standalone snap. It was created to share 'content' with other snaps I package.
+      * I do not maintain the software itself. I only maintain the snap packaging. Please report software bugs to the maintainers.
+      * Report snap-specific bugs to me.
+      * I _DO_ use this snap. It _has been superficially tested_ on my system. I __do not__ track the latest version.
+      * __This snap works in devmode only.__
+      * Packaging 'style' : tarball build for linux machines.
+      * License refers to the original software, not the snapcraft 'code'.
+      * More info:
+      * Run the following to rename the snap
+      ```sudo snap alias rjd-texlive-basic.pdflatex pdflatex```
 
-base: core22
-grade: stable
-confinement: strict
+website: https://github.com/RJDan/texlive-basic_snap
+source-code : https://github.com/RJDan/texlive-basic_snap
+#icon: Icon_230417.svg
+
+grade: stable # devel
+confinement: strict # strict, devmode, classic
+license: LPPL-1.2
+base: core22 # the base snap is the execution environment for this snap
+architectures:
+      - amd64
 compression: lzo
 
 environment:
@@ -22,6 +38,13 @@ environment:
   TEXMFHOME: $HOME/texmf
   TEXMFCONFIG: $HOME/.texlive$SNAP_VERSION/texmf-config
   TEXMFVAR: $HOME/.texlive2022$SNAP_VERSION/texmf-var
+
+slots:
+    rjd-texlive:
+        interface: content
+        content: rjd-texlive-0-2022-2204
+        read: 
+            - $SNAP/lib
 
 apps:
   afm2tfm:
