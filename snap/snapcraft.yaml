@@ -323,7 +323,7 @@ apps:
     aliases: [ tlshell ]
     command: bin/x86_64-linux/tlshell
     plugs: ["home", "removable-media"]
-ttf2afm:
+  ttf2afm:
     aliases: [ ttf2afm ]
     command: bin/x86_64-linux/ttf2afm
     plugs: ["home", "removable-media"]
