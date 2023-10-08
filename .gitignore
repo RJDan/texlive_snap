@@ -5,7 +5,7 @@
 
 *.snap
 *~
-*swp
+*kate-swp
 
 .snapcraft
 __pycache__
