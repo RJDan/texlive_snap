@@ -44,7 +44,7 @@ slots:
         interface: content
         content: rjd-texlive-0-2022-2204
         read: 
-            - $SNAP/lib
+            - $SNAP/rjd-texlive
 
 apps:
   afm2tfm:
