@@ -14,4 +14,4 @@
 * License refers to the original software, not the snapcraft 'code'.
 * More info:
 * Run the following to rename the snap
-```sudo snap alias rjd-texlive-basic.pdflatex pdflatex```
+```sudo snap alias rjd-texlive.pdflatex pdflatex```

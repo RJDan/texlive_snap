@@ -9,12 +9,12 @@ description: |
       * I do not maintain the software itself. I only maintain the snap packaging. Please report software bugs to the maintainers.
       * Report snap-specific bugs to me.
       * I _DO_ use this snap. It _has been superficially tested_ on my system. I __do not__ track the latest version.
-      * __This snap works in devmode only.__
+      * __This snap works in strict confinement.__
       * Packaging 'style' : tarball build for linux machines.
       * License refers to the original software, not the snapcraft 'code'.
       * More info:
       * Run the following to rename the snap
-      ```sudo snap alias rjd-texlive-basic.pdflatex pdflatex```
+      ```sudo snap alias rjd-texlive.pdflatex pdflatex```
 
 website: https://github.com/RJDan/texlive-basic_snap
 source-code : https://github.com/RJDan/texlive-basic_snap
@@ -452,3 +452,7 @@ parts:
       collection-publishers 1
       EOF
       perl ./install-tl --no-interaction --texdir=$CRAFT_PART_INSTALL --profile texlive.profile
+    organize:
+            # in the form of <old org>: <new org>
+                #"Rlogo.png" : snap/Rlogo.png
+                 "usr/local/texlive/2023/bin/x86_64-linux" : usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}
