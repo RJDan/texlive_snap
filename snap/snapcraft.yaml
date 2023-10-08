@@ -38,7 +38,7 @@ environment:
   TEXMFHOME: $HOME/texmf
   TEXMFCONFIG: $HOME/.texlive$SNAP_VERSION/texmf-config
   TEXMFVAR: $HOME/.texlive2022$SNAP_VERSION/texmf-var
-
+  
 slots:
     rjd-texlive:
         interface: content
@@ -48,236 +48,381 @@ slots:
 
 apps:
   afm2tfm:
-    aliases: [  afm2tfm ]
+    aliases: [ afm2tfm ]
     command: bin/x86_64-linux/afm2tfm
     plugs: ["home", "removable-media"]
+  biber:
+    aliases: [ biber ]
+    command: bin/x86_64-linux/biber
+    plugs: ["home", "removable-media"]
   bibtex:
-    aliases: [  bibtex ]
+    aliases: [ bibtex ]
     command: bin/x86_64-linux/bibtex
     plugs: ["home", "removable-media"]
   dvilualatex:
-    aliases: [  dvilualatex ]
+    aliases: [ dvilualatex ]
     command: bin/x86_64-linux/dvilualatex
     plugs: ["home", "removable-media"]
   dviluatex:
-    aliases: [  dviluatex ]
+    aliases: [ dviluatex ]
     command: bin/x86_64-linux/dviluatex
     plugs: ["home", "removable-media"]
   dvipdfm:
-    aliases: [  dvipdfm ]
+    aliases: [ dvipdfm ]
     command: bin/x86_64-linux/dvipdfm
     plugs: ["home", "removable-media"]
   dvipdfmx:
-    aliases: [  dvipdfmx ]
+    aliases: [ dvipdfmx ]
     command: bin/x86_64-linux/dvipdfmx
     plugs: ["home", "removable-media"]
   dvipdft:
-    aliases: [  dvipdft ]
+    aliases: [ dvipdft ]
     command: bin/x86_64-linux/dvipdft
     plugs: ["home", "removable-media"]
   dvips:
-    aliases: [  dvips ]
+    aliases: [ dvips ]
     command: bin/x86_64-linux/dvips
     plugs: ["home", "removable-media"]
   ebb:
-    aliases: [  ebb ]
+    aliases: [ ebb ]
     command: bin/x86_64-linux/ebb
     plugs: ["home", "removable-media"]
+  eptex:
+    aliases: [ eptex ]
+    command: bin/x86_64-linux/eptex
+    plugs: ["home", "removable-media"]
   etex:
-    aliases: [  etex ]
+    aliases: [ etex ]
     command: bin/x86_64-linux/etex
     plugs: ["home", "removable-media"]
+  euptex:
+    aliases: [ euptex ]
+    command: bin/x86_64-linux/euptex
+    plugs: ["home", "removable-media"]
   extractbb:
-    aliases: [  extractbb ]
+    aliases: [ extractbb ]
     command: bin/x86_64-linux/extractbb
     plugs: ["home", "removable-media"]
   fmtutil:
-    aliases: [  fmtutil ]
+    aliases: [ fmtutil ]
     command: bin/x86_64-linux/fmtutil
     plugs: ["home", "removable-media"]
   fmtutil-sys:
-    aliases: [  fmtutil-sys ]
+    aliases: [ fmtutil-sys ]
     command: bin/x86_64-linux/fmtutil-sys
     plugs: ["home", "removable-media"]
   fmtutil-user:
-    aliases: [  fmtutil-user ]
+    aliases: [ fmtutil-user ]
     command: bin/x86_64-linux/fmtutil-user
     plugs: ["home", "removable-media"]
   gftodvi:
-    aliases: [  gftodvi ]
+    aliases: [ gftodvi ]
     command: bin/x86_64-linux/gftodvi
     plugs: ["home", "removable-media"]
   gftopk:
-    aliases: [  gftopk ]
+    aliases: [ gftopk ]
     command: bin/x86_64-linux/gftopk
     plugs: ["home", "removable-media"]
   gftype:
-    aliases: [  gftype ]
+    aliases: [ gftype ]
     command: bin/x86_64-linux/gftype
     plugs: ["home", "removable-media"]
   inimf:
-    aliases: [  inimf ]
+    aliases: [ inimf ]
     command: bin/x86_64-linux/inimf
     plugs: ["home", "removable-media"]
   initex:
-    aliases: [  initex ]
+    aliases: [ initex ]
     command: bin/x86_64-linux/initex
     plugs: ["home", "removable-media"]
   kpseaccess:
-    aliases: [  kpseaccess ]
+    aliases: [ kpseaccess ]
     command: bin/x86_64-linux/kpseaccess
     plugs: ["home", "removable-media"]
   kpsereadlink:
-    aliases: [  kpsereadlink ]
+    aliases: [ kpsereadlink ]
     command: bin/x86_64-linux/kpsereadlink
     plugs: ["home", "removable-media"]
   kpsestat:
-    aliases: [  kpsestat ]
+    aliases: [ kpsestat ]
     command: bin/x86_64-linux/kpsestat
     plugs: ["home", "removable-media"]
   kpsewhich:
-    aliases: [  kpsewhich ]
+    aliases: [ kpsewhich ]
     command: bin/x86_64-linux/kpsewhich
     plugs: ["home", "removable-media"]
   latex:
-    aliases: [  latex ]
+    aliases: [ latex ]
     command: bin/x86_64-linux/latex
     plugs: ["home", "removable-media"]
+  latexmk:
+    command: bin/x86_64-linux/latexmk
+    plugs: ["home", "removable-media"]
   luahbtex:
-    aliases: [  luahbtex ]
+    aliases: [ luahbtex ]
     command: bin/x86_64-linux/luahbtex
     plugs: ["home", "removable-media"]
   lualatex:
-    aliases: [  lualatex ]
+    aliases: [ lualatex ]
     command: bin/x86_64-linux/lualatex
     plugs: ["home", "removable-media"]
   luaotfload-tool:
-    aliases: [  luaotfload-tool ]
+    aliases: [ luaotfload-tool ]
     command: bin/x86_64-linux/luaotfload-tool
     plugs: ["home", "removable-media"]
   luatex:
-    aliases: [  luatex ]
+    aliases: [ luatex ]
     command: bin/x86_64-linux/luatex
     plugs: ["home", "removable-media"]
   makeindex:
-    aliases: [  makeindex ]
+    aliases: [ makeindex ]
     command: bin/x86_64-linux/makeindex
     plugs: ["home", "removable-media"]
+  makejvf:
+    aliases: [ makejvf ]
+    command: bin/x86_64-linux/makejvf
+    plugs: ["home", "removable-media"]
+  mendex:
+    aliases: [ mendex ]
+    command: bin/x86_64-linux/mendex
+    plugs: ["home", "removable-media"]
   mf:
-    aliases: [  mf ]
+    aliases: [ mf ]
     command: bin/x86_64-linux/mf
     plugs: ["home", "removable-media"]
   mf-nowin:
-    aliases: [  mf-nowin ]
+    aliases: [ mf-nowin ]
     command: bin/x86_64-linux/mf-nowin
     plugs: ["home", "removable-media"]
   mft:
-    aliases: [  mft ]
+    aliases: [ mft ]
     command: bin/x86_64-linux/mft
     plugs: ["home", "removable-media"]
   mkindex:
-    aliases: [  mkindex ]
+    aliases: [ mkindex ]
     command: bin/x86_64-linux/mkindex
     plugs: ["home", "removable-media"]
   mktexfmt:
-    aliases: [  mktexfmt ]
+    aliases: [ mktexfmt ]
     command: bin/x86_64-linux/mktexfmt
     plugs: ["home", "removable-media"]
   mktexlsr:
-    aliases: [  mktexlsr ]
+    aliases: [ mktexlsr ]
     command: bin/x86_64-linux/mktexlsr
     plugs: ["home", "removable-media"]
   mktexmf:
-    aliases: [  mktexmf ]
+    aliases: [ mktexmf ]
     command: bin/x86_64-linux/mktexmf
     plugs: ["home", "removable-media"]
   mktexpk:
-    aliases: [  mktexpk ]
+    aliases: [ mktexpk ]
     command: bin/x86_64-linux/mktexpk
     plugs: ["home", "removable-media"]
   mktextfm:
-    aliases: [  mktextfm ]
+    aliases: [ mktextfm ]
     command: bin/x86_64-linux/mktextfm
     plugs: ["home", "removable-media"]
   mptopdf:
-    aliases: [  mptopdf ]
+    aliases: [ mptopdf ]
     command: bin/x86_64-linux/mptopdf
     plugs: ["home", "removable-media"]
+  pbibtex:
+    aliases: [ pbibtex ]
+    command: bin/x86_64-linux/pbibtex
+    plugs: ["home", "removable-media"]
   pdfetex:
-    aliases: [  pdfetex ]
+    aliases: [ pdfetex ]
     command: bin/x86_64-linux/pdfetex
     plugs: ["home", "removable-media"]
   pdflatex:
-    aliases: [  pdflatex ]
+    aliases: [ pdflatex ]
     command: bin/x86_64-linux/pdflatex
     plugs: ["home", "removable-media"]
   pdftex:
-    aliases: [  pdftex ]
+    aliases: [ pdftex ]
     command: bin/x86_64-linux/pdftex
     plugs: ["home", "removable-media"]
+  pdvitomp:
+    aliases: [ pdvitomp ]
+    command: bin/x86_64-linux/pdvitomp
+    plugs: ["home", "removable-media"]
+  pdvitype:
+    aliases: [ pdvitype ]
+    command: bin/x86_64-linux/pdvitype
+    plugs: ["home", "removable-media"]
   pktogf:
-    aliases: [  pktogf ]
+    aliases: [ pktogf ]
     command: bin/x86_64-linux/pktogf
     plugs: ["home", "removable-media"]
   pktype:
-    aliases: [  pktype ]
+    aliases: [ pktype ]
     command: bin/x86_64-linux/pktype
     plugs: ["home", "removable-media"]
+  platex:
+    aliases: [ platex ]
+    command: bin/x86_64-linux/platex
+    plugs: ["home", "removable-media"]
+  platex-dev:
+    aliases: [ platex-dev ]
+    command: bin/x86_64-linux/platex-dev
+    plugs: ["home", "removable-media"]
+  pmpost:
+    aliases: [ pmpost ]
+    command: bin/x86_64-linux/pmpost
+    plugs: ["home", "removable-media"]
+  ppltotf:
+    aliases: [ ppltotf ]
+    command: bin/x86_64-linux/ppltotf
+    plugs: ["home", "removable-media"]
+  ptex:
+    aliases: [ ptex ]
+    command: bin/x86_64-linux/ptex
+    plugs: ["home", "removable-media"]
+  ptftopl:
+    aliases: [ ptftopl ]
+    command: bin/x86_64-linux/ptftopl
+    plugs: ["home", "removable-media"]
+  r-pmpost:
+    aliases: [ r-pmpost]
+    command: bin/x86_64-linux/r-pmpost
+    plugs: ["home", "removable-media"]
+  r-upmpost:
+    aliases: [ r--upmpost ]
+    command: bin/x86_64-linux/r-upmpost
+    plugs: ["home", "removable-media"]
+
   rungs:
-    aliases: [  rungs ]
+    aliases: [ rungs ]
     command: bin/x86_64-linux/rungs
     plugs: ["home", "removable-media"]
   simpdftex:
-    aliases: [  simpdftex ]
+    aliases: [ simpdftex ]
     command: bin/x86_64-linux/simpdftex
     plugs: ["home", "removable-media"]
   tex:
-    aliases: [  tex ]
+    aliases: [ tex ]
     command: bin/x86_64-linux/tex
     plugs: ["home", "removable-media"]
   texhash:
-    aliases: [  texhash ]
+    aliases: [ texhash ]
     command: bin/x86_64-linux/texhash
     plugs: ["home", "removable-media"]
   texlua:
-    aliases: [  texlua ]
+    aliases: [ texlua ]
     command: bin/x86_64-linux/texlua
     plugs: ["home", "removable-media"]
   texluac:
-    aliases: [  texluac ]
+    aliases: [ texluac ]
     command: bin/x86_64-linux/texluac
     plugs: ["home", "removable-media"]
   tlmgr:
-    aliases: [  tlmgr ]
+    aliases: [ tlmgr ]
     command: bin/x86_64-linux/tlmgr
     plugs: ["home", "removable-media"]
   tlshell:
-    aliases: [  tlshell ]
+    aliases: [ tlshell ]
     command: bin/x86_64-linux/tlshell
     plugs: ["home", "removable-media"]
+ttf2afm:
+    aliases: [ ttf2afm ]
+    command: bin/x86_64-linux/ttf2afm
+    plugs: ["home", "removable-media"]
+  ttf2pk:
+    aliases: [ ttf2pk ]
+    command: bin/x86_64-linux/ttf2pk
+    plugs: ["home", "removable-media"]
+  ttf2tfm:
+    aliases: [ ttf2tfm ]
+    command: bin/x86_64-linux/ttf2tfm
+    plugs: ["home", "removable-media"]
+  ttfdump:
+    aliases: [ ttfdump ]
+    command: bin/x86_64-linux/ttfdump
+    plugs: ["home", "removable-media"]
+  upbibtex:
+    aliases: [ upbibtex ]
+    command: bin/x86_64-linux/upbibtex
+    plugs: ["home", "removable-media"]
   updmap:
-    aliases: [  updmap ]
+    aliases: [ updmap ]
     command: bin/x86_64-linux/updmap
     plugs: ["home", "removable-media"]
   updmap-sys:
-    aliases: [  updmap-sys ]
+    aliases: [ updmap-sys ]
     command: bin/x86_64-linux/updmap-sys
     plugs: ["home", "removable-media"]
   updmap-user:
-    aliases: [  updmap-user ]
+    aliases: [ updmap-user ]
     command: bin/x86_64-linux/updmap-user
     plugs: ["home", "removable-media"]
+
+  updvitomp:
+    aliases: [ updvitomp ]
+    command: bin/x86_64-linux/updvitomp
+    plugs: ["home", "removable-media"]
+  updvitype:
+    aliases: [ updvitype ]
+    command: bin/x86_64-linux/updvitype
+    plugs: ["home", "removable-media"]
+  uplatex:
+    aliases: [ uplatex ]
+    command: bin/x86_64-linux/uplatex
+    plugs: ["home", "removable-media"]
+  uplatex-dev:
+    aliases: [ uplatex-dev ]
+    command: bin/x86_64-linux/uplatex-dev
+    plugs: ["home", "removable-media"]
+  upmendex:
+    aliases: [ upmendex ]
+    command: bin/x86_64-linux/upmendex
+    plugs: ["home", "removable-media"]
+  upmpost:
+    aliases: [ upmpost ]
+    command: bin/x86_64-linux/upmpost
+    plugs: ["home", "removable-media"]
+  uppltotf:
+    aliases: [ uppltotf ]
+    command: bin/x86_64-linux/uppltotf
+    plugs: ["home", "removable-media"]
+  uptex:
+    aliases: [ uptex ]
+    command: bin/x86_64-linux/uptex
+    plugs: ["home", "removable-media"]
+  uptftopl:
+    aliases: [ uptftopl ]
+    command: bin/x86_64-linux/uptftopl
+    plugs: ["home", "removable-media"]
+  wovp2ovf:
+    aliases: [ wovp2ovf ]
+    command: bin/x86_64-linux/wovp2ovf
+    plugs: ["home", "removable-media"]
   xdvi:
-    aliases: [  xdvi ]
+    aliases: [ xdvi ]
     command: bin/x86_64-linux/xdvi
     plugs: ["home", "removable-media"]
   xdvi-xaw:
-    aliases: [  xdvi-xaw ]
+    aliases: [ xdvi-xaw ]
     command: bin/x86_64-linux/xdvi-xaw
     plugs: ["home", "removable-media"]
   xdvipdfmx:
-    aliases: [  xdvipdfmx ]
+    aliases: [ xdvipdfmx ]
     command: bin/x86_64-linux/xdvipdfmx
+    plugs: ["home", "removable-media"]
+  xelatex:
+    aliases: [ xelatex ]
+    command: bin/x86_64-linux/xelatex
+    plugs: ["home", "removable-media"]
+  xelatex-unsafe:
+    aliases: [ xelatex-unsafe ]
+    command: bin/x86_64-linux/xelatex-unsafe
+    plugs: ["home", "removable-media"]
+  xetex:
+    aliases: [ xetex ]
+    command: bin/x86_64-linux/xetex
+    plugs: ["home", "removable-media"]
+  xetex-unsafe:
+    aliases: [ xetex-unsafe ]
+    command: bin/x86_64-linux/xetex-unsafe
     plugs: ["home", "removable-media"]
 
 parts:
@@ -294,7 +439,8 @@ parts:
       rm install-tl-unx.tar.gz
       cd install-tl-*
       cat << EOF > texlive.profile
-      selected_scheme scheme-basic
+      selected_scheme scheme-custom
       binary_x86_64-linux 1
+      collection-publishers 1
       EOF
       perl ./install-tl --no-interaction --texdir=$CRAFT_PART_INSTALL --profile texlive.profile

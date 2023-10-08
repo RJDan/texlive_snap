@@ -4,6 +4,8 @@
 /prime/
 
 *.snap
+*~
+*swp
 
 .snapcraft
 __pycache__
