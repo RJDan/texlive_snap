@@ -14,7 +14,7 @@ description: |
       * License refers to the original software, not the snapcraft 'code'.
       * More info:
       * Run the following to rename the snap
-      ```sudo snap alias rjd-texlive-basic.pdflatex pdflatex```
+      ```sudo snap alias rjd-texlive.pdflatex pdflatex```
 
 website: https://github.com/RJDan/texlive-basic_snap
 source-code : https://github.com/RJDan/texlive-basic_snap
@@ -39,10 +39,6 @@ environment:
   TEXMFHOME: $HOME/texmf
   TEXMFCONFIG: $HOME/.texlive$SNAP_VERSION/texmf-config
   TEXMFVAR: $HOME/.texlive2023$SNAP_VERSION/texmf-var
-
-layout:
-    ${SNAP}/usr/local/texlive/2023/bin/x86_64-linux:
-        bind: ${SNAP}/usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}
 
 slots:
     rjd-texlive:

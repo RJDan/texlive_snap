@@ -40,10 +40,6 @@ environment:
   TEXMFCONFIG: $HOME/.texlive$SNAP_VERSION/texmf-config
   TEXMFVAR: $HOME/.texlive2023$SNAP_VERSION/texmf-var
 
-layout:
-    ${SNAP}/usr/local/texlive/2023/bin/x86_64-linux:
-        bind: ${SNAP}/usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}
-
 slots:
     rjd-texlive:
         interface: content
