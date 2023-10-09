@@ -13,11 +13,10 @@ description: |
       * Packaging 'style' : tarball build for linux machines.
       * License refers to the original software, not the snapcraft 'code'.
       * More info:
-      * Run the following to rename the snap
-      ```sudo snap alias rjd-texlive.pdflatex pdflatex```
+      * Use the rjd-snapout snap to create bulk aliases for this snap.
 
-website: https://github.com/RJDan/texlive-basic_snap
-source-code : https://github.com/RJDan/texlive-basic_snap
+website: https://github.com/RJDan/texlive_snap
+source-code : https://github.com/RJDan/texlive_snap
 #icon: Icon_230417.svg
 
 grade: stable # devel
@@ -431,13 +430,16 @@ parts:
       - gzip
       - perl-base
       - wget
-      - make
     stage-packages:
     - texlive-lang-japanese
     override-build: |
       craftctl default
       #TARGET=https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2022/install-tl-unx.tar.gz
-      TARGET=https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2023/install-tl-unx.tar.gz
+      #TARGET=ftp://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2022/install-tl-unx.tar.gz
+      #TARGET=https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2023/install-tl-unx.tar.gz
+      #TARGET=ftp://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2023/install-tl-unx.tar.gz
+      # the mirror seems buggy, use the default mirror for now
+      TARGET=https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
       wget ${TARGET}
       zcat install-tl-unx.tar.gz | tar xf -
       rm install-tl-unx.tar.gz
