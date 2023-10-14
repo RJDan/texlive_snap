@@ -19,6 +19,28 @@ website: https://github.com/RJDan/texlive_snap
 source-code : https://github.com/RJDan/texlive_snap
 #icon: Icon_230417.svg
 
+# the build issue of external symlinks seems tied to dangling symlinks
+# either delete them or point them in a new direction
+layout: 
+    # /var/lib/texmf/ls-R-TEXMFMAIN: # I am not sure where these should point to... they seem to point to a folder above the snap directory
+    #     symlink: ${SNAP}/texmf/ls-R
+    # /var/lib/texmf/fmtutil.cnf-DEBIAN:
+    #     symlink: ${SNAP}/texmf/web2c/fmtutil.cnf
+    # /var/lib/texmf/updmap.cfg-DEBIAN lint-snap-v2_external_symlinks :
+    #     symlink: ${SNAP}/texmf/web2c/updmap.cfg
+    /var/lib/texmf/ls-R-TEXLIVEDIST:
+        symlink: ${SNAP}/texmf-dist/ls-R # these seem to be the files best matching their 'usr/share/texmf/texlive/ symlinks
+    /var/lib/texmf/tex/generic/config/language.dat:
+        symlink: ${SNAP}/texmf-dist/tex/generic/config/language.dat
+    /var/lib/texmf/tex/generic/config/language.dat.lua:
+        symlink: ${SNAP}/texmf-dist/tex/generic/config/language.dat.lua
+    /var/lib/texmf/tex/generic/config/language.def:
+        symlink: ${SNAP}/texmf-dist/tex/generic/config/language.def
+    /var/lib/texmf/fmtutil.cnf-TEXLIVEDIST:
+        symlink: ${SNAP}/texmf-dist/web2c/fmtutil.cnf
+    /var/lib/texmf/updmap.cfg-TEXLIVEDIST:
+        symlink: ${SNAP}/texmf-dist/web2c/updmap.cfg
+
 grade: stable # devel
 confinement: strict # strict, devmode, classic
 license: LPPL-1.2
@@ -35,9 +57,21 @@ environment:
   TEXMFLOCAL: $SNAP/texmf-local
   TEXMFSYSCONFIG: $SNAP/texmf-config
   TEXMFSYSVAR: $SNAP/texmf-var
+  TEXMFVAR: $HOME/.texlive${SNAPCRAFT_PROJECT_VERSION}/texmf-var
+  TEXMFCONFIG: $HOME/.texlive${SNAPCRAFT_PROJECT_VERSION}/texmf-config
   TEXMFHOME: $HOME/texmf
-  TEXMFCONFIG: $HOME/.texlive$SNAP_VERSION/texmf-config
-  TEXMFVAR: $HOME/.texlive${SNAPCRAFT_PROJECT_VERSION}$SNAP_VERSION/texmf-var
+
+# $SNAP_VERSION # snap variable
+# $SNAPCRAFT_PROJECT_VERSION # snapcraft variable
+
+# maybe try to set these env vars during the build
+#  tlpdbopt_sys_bin: "/usr/local/bin"
+#  tlpdbopt_sys_info: "/usr/local/share/info"
+#  tlpdbopt_sys_man: "/usr/local/share/man"
+
+# during build...
+#xetex: error while loading shared libraries: libfontconfig.so.1: cannot open shared object file: No such file or directory
+
 
 slots:
     rjd-texlive:
