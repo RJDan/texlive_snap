@@ -28,7 +28,7 @@ architectures:
 compression: lzo
 
 environment:
-  PATH: ${SNAP}/usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}:$PATH
+  PATH: $PATH
   MANPATH: $SNAP/texmf-dist/doc/man:/usr/local/share/man:$MANPATH
   INFOPATH: $SNAP/texmf-dist/doc/info:/usr/local/share/info:$INFOPATH
   TEXDIR: $SNAP
@@ -37,420 +37,423 @@ environment:
   TEXMFSYSVAR: $SNAP/texmf-var
   TEXMFHOME: $HOME/texmf
   TEXMFCONFIG: $HOME/.texlive$SNAP_VERSION/texmf-config
-  TEXMFVAR: $HOME/.texlive2023$SNAP_VERSION/texmf-var
+  TEXMFVAR: $HOME/.texlive${SNAPCRAFT_PROJECT_VERSION}$SNAP_VERSION/texmf-var
 
 slots:
     rjd-texlive:
         interface: content
-        content: rjd-texlive-0-2023-2204
+        content: rjd-texlive-0-${SNAPCRAFT_PROJECT_VERSION}-2204
         read: 
-            - $SNAP/rjd-texlive
+            - $SNAP/
 
 apps:
   afm2tfm:
     aliases: [ afm2tfm ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/afm2tfm
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/afm2tfm
     plugs: ["home", "removable-media"]
   biber:
     aliases: [ biber ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/biber
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/biber
     plugs: ["home", "removable-media"]
   bibtex:
     aliases: [ bibtex ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/bibtex
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/bibtex
     plugs: ["home", "removable-media"]
   dvilualatex:
     aliases: [ dvilualatex ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/dvilualatex
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/dvilualatex
     plugs: ["home", "removable-media"]
   dviluatex:
     aliases: [ dviluatex ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/dviluatex
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/dviluatex
     plugs: ["home", "removable-media"]
   dvipdfm:
     aliases: [ dvipdfm ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/dvipdfm
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/dvipdfm
     plugs: ["home", "removable-media"]
   dvipdfmx:
     aliases: [ dvipdfmx ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/dvipdfmx
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/dvipdfmx
     plugs: ["home", "removable-media"]
   dvipdft:
     aliases: [ dvipdft ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/dvipdft
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/dvipdft
     plugs: ["home", "removable-media"]
   dvips:
     aliases: [ dvips ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/dvips
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/dvips
     plugs: ["home", "removable-media"]
   ebb:
     aliases: [ ebb ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/ebb
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/ebb
     plugs: ["home", "removable-media"]
   eptex:
     aliases: [ eptex ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/eptex
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/eptex
     plugs: ["home", "removable-media"]
   etex:
     aliases: [ etex ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/etex
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/etex
     plugs: ["home", "removable-media"]
   euptex:
     aliases: [ euptex ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/euptex
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/euptex
     plugs: ["home", "removable-media"]
   extractbb:
     aliases: [ extractbb ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/extractbb
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/extractbb
     plugs: ["home", "removable-media"]
   fmtutil:
     aliases: [ fmtutil ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/fmtutil
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/fmtutil
     plugs: ["home", "removable-media"]
   fmtutil-sys:
     aliases: [ fmtutil-sys ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/fmtutil-sys
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/fmtutil-sys
     plugs: ["home", "removable-media"]
   fmtutil-user:
     aliases: [ fmtutil-user ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/fmtutil-user
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/fmtutil-user
     plugs: ["home", "removable-media"]
   gftodvi:
     aliases: [ gftodvi ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/gftodvi
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/gftodvi
     plugs: ["home", "removable-media"]
   gftopk:
     aliases: [ gftopk ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/gftopk
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/gftopk
     plugs: ["home", "removable-media"]
   gftype:
     aliases: [ gftype ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/gftype
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/gftype
     plugs: ["home", "removable-media"]
   inimf:
     aliases: [ inimf ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/inimf
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/inimf
     plugs: ["home", "removable-media"]
   initex:
     aliases: [ initex ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/initex
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/initex
     plugs: ["home", "removable-media"]
   kpseaccess:
     aliases: [ kpseaccess ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/kpseaccess
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/kpseaccess
     plugs: ["home", "removable-media"]
   kpsereadlink:
     aliases: [ kpsereadlink ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/kpsereadlink
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/kpsereadlink
     plugs: ["home", "removable-media"]
   kpsestat:
     aliases: [ kpsestat ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/kpsestat
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/kpsestat
     plugs: ["home", "removable-media"]
   kpsewhich:
     aliases: [ kpsewhich ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/kpsewhich
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/kpsewhich
     plugs: ["home", "removable-media"]
   latex:
     aliases: [ latex ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/latex
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/latex
     plugs: ["home", "removable-media"]
   latexmk:
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/latexmk
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/latexmk
     plugs: ["home", "removable-media"]
   luahbtex:
     aliases: [ luahbtex ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/luahbtex
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/luahbtex
     plugs: ["home", "removable-media"]
   lualatex:
     aliases: [ lualatex ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/lualatex
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/lualatex
     plugs: ["home", "removable-media"]
   luaotfload-tool:
     aliases: [ luaotfload-tool ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/luaotfload-tool
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/luaotfload-tool
     plugs: ["home", "removable-media"]
   luatex:
     aliases: [ luatex ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/luatex
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/luatex
     plugs: ["home", "removable-media"]
   makeindex:
     aliases: [ makeindex ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/makeindex
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/makeindex
     plugs: ["home", "removable-media"]
   makejvf:
     aliases: [ makejvf ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/makejvf
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/makejvf
     plugs: ["home", "removable-media"]
   mendex:
     aliases: [ mendex ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/mendex
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/mendex
     plugs: ["home", "removable-media"]
   mf:
     aliases: [ mf ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/mf
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/mf
     plugs: ["home", "removable-media"]
   mf-nowin:
     aliases: [ mf-nowin ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/mf-nowin
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/mf-nowin
     plugs: ["home", "removable-media"]
   mft:
     aliases: [ mft ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/mft
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/mft
     plugs: ["home", "removable-media"]
   mkindex:
     aliases: [ mkindex ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/mkindex
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/mkindex
     plugs: ["home", "removable-media"]
   mktexfmt:
     aliases: [ mktexfmt ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/mktexfmt
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/mktexfmt
     plugs: ["home", "removable-media"]
   mktexlsr:
     aliases: [ mktexlsr ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/mktexlsr
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/mktexlsr
     plugs: ["home", "removable-media"]
   mktexmf:
     aliases: [ mktexmf ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/mktexmf
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/mktexmf
     plugs: ["home", "removable-media"]
   mktexpk:
     aliases: [ mktexpk ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/mktexpk
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/mktexpk
     plugs: ["home", "removable-media"]
   mktextfm:
     aliases: [ mktextfm ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/mktextfm
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/mktextfm
     plugs: ["home", "removable-media"]
   mptopdf:
     aliases: [ mptopdf ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/mptopdf
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/mptopdf
     plugs: ["home", "removable-media"]
   pbibtex:
     aliases: [ pbibtex ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/pbibtex
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/pbibtex
     plugs: ["home", "removable-media"]
   pdfetex:
     aliases: [ pdfetex ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/pdfetex
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/pdfetex
     plugs: ["home", "removable-media"]
   pdflatex:
     aliases: [ pdflatex ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/pdflatex
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/pdflatex
     plugs: ["home", "removable-media"]
   pdftex:
     aliases: [ pdftex ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/pdftex
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/pdftex
     plugs: ["home", "removable-media"]
   pdvitomp:
     aliases: [ pdvitomp ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/pdvitomp
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/pdvitomp
     plugs: ["home", "removable-media"]
   pdvitype:
     aliases: [ pdvitype ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/pdvitype
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/pdvitype
     plugs: ["home", "removable-media"]
   pktogf:
     aliases: [ pktogf ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/pktogf
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/pktogf
     plugs: ["home", "removable-media"]
   pktype:
     aliases: [ pktype ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/pktype
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/pktype
     plugs: ["home", "removable-media"]
   platex:
     aliases: [ platex ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/platex
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/platex
     plugs: ["home", "removable-media"]
   platex-dev:
     aliases: [ platex-dev ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/platex-dev
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/platex-dev
     plugs: ["home", "removable-media"]
   pmpost:
     aliases: [ pmpost ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/pmpost
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/pmpost
     plugs: ["home", "removable-media"]
   ppltotf:
     aliases: [ ppltotf ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/ppltotf
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/ppltotf
     plugs: ["home", "removable-media"]
   ptex:
     aliases: [ ptex ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/ptex
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/ptex
     plugs: ["home", "removable-media"]
   ptftopl:
     aliases: [ ptftopl ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/ptftopl
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/ptftopl
     plugs: ["home", "removable-media"]
   r-pmpost:
     aliases: [ r-pmpost]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/r-pmpost
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/r-pmpost
     plugs: ["home", "removable-media"]
   r-upmpost:
     aliases: [ r--upmpost ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/r-upmpost
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/r-upmpost
     plugs: ["home", "removable-media"]
   rungs:
     aliases: [ rungs ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/rungs
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/rungs
     plugs: ["home", "removable-media"]
   simpdftex:
     aliases: [ simpdftex ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/simpdftex
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/simpdftex
     plugs: ["home", "removable-media"]
   tex:
     aliases: [ tex ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/tex
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/tex
     plugs: ["home", "removable-media"]
   texhash:
     aliases: [ texhash ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/texhash
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/texhash
     plugs: ["home", "removable-media"]
   texlua:
     aliases: [ texlua ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/texlua
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/texlua
     plugs: ["home", "removable-media"]
   texluac:
     aliases: [ texluac ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/texluac
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/texluac
     plugs: ["home", "removable-media"]
   tlmgr:
     aliases: [ tlmgr ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/tlmgr
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/tlmgr
     plugs: ["home", "removable-media"]
   tlshell:
     aliases: [ tlshell ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/tlshell
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/tlshell
     plugs: ["home", "removable-media"]
   ttf2afm:
     aliases: [ ttf2afm ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/ttf2afm
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/ttf2afm
     plugs: ["home", "removable-media"]
   ttf2pk:
     aliases: [ ttf2pk ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/ttf2pk
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/ttf2pk
     plugs: ["home", "removable-media"]
   ttf2tfm:
     aliases: [ ttf2tfm ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/ttf2tfm
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/ttf2tfm
     plugs: ["home", "removable-media"]
   ttfdump:
     aliases: [ ttfdump ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/ttfdump
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/ttfdump
     plugs: ["home", "removable-media"]
   upbibtex:
     aliases: [ upbibtex ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/upbibtex
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/upbibtex
     plugs: ["home", "removable-media"]
   updmap:
     aliases: [ updmap ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/updmap
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/updmap
     plugs: ["home", "removable-media"]
   updmap-sys:
     aliases: [ updmap-sys ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/updmap-sys
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/updmap-sys
     plugs: ["home", "removable-media"]
   updmap-user:
     aliases: [ updmap-user ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/updmap-user
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/updmap-user
     plugs: ["home", "removable-media"]
   updvitomp:
     aliases: [ updvitomp ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/updvitomp
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/updvitomp
     plugs: ["home", "removable-media"]
   updvitype:
     aliases: [ updvitype ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/updvitype
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/updvitype
     plugs: ["home", "removable-media"]
   uplatex:
     aliases: [ uplatex ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/uplatex
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/uplatex
     plugs: ["home", "removable-media"]
   uplatex-dev:
     aliases: [ uplatex-dev ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/uplatex-dev
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/uplatex-dev
     plugs: ["home", "removable-media"]
   upmendex:
     aliases: [ upmendex ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/upmendex
+    command: usr/bin/upmendex
     plugs: ["home", "removable-media"]
   upmpost:
     aliases: [ upmpost ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/upmpost
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/upmpost
     plugs: ["home", "removable-media"]
   uppltotf:
     aliases: [ uppltotf ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/uppltotf
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/uppltotf
     plugs: ["home", "removable-media"]
   uptex:
     aliases: [ uptex ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/uptex
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/uptex
     plugs: ["home", "removable-media"]
   uptftopl:
     aliases: [ uptftopl ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/uptftopl
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/uptftopl
     plugs: ["home", "removable-media"]
   wovp2ovf:
     aliases: [ wovp2ovf ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/wovp2ovf
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/wovp2ovf
     plugs: ["home", "removable-media"]
   xdvi:
     aliases: [ xdvi ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/xdvi
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/xdvi
     plugs: ["home", "removable-media"]
   xdvi-xaw:
     aliases: [ xdvi-xaw ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/xdvi-xaw
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/xdvi-xaw
     plugs: ["home", "removable-media"]
   xdvipdfmx:
     aliases: [ xdvipdfmx ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/xdvipdfmx
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/xdvipdfmx
     plugs: ["home", "removable-media"]
   xelatex:
     aliases: [ xelatex ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/xelatex
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/xelatex
     plugs: ["home", "removable-media"]
   xelatex-unsafe:
     aliases: [ xelatex-unsafe ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/xelatex-unsafe
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/xelatex-unsafe
     plugs: ["home", "removable-media"]
   xetex:
     aliases: [ xetex ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/xetex
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/xetex
     plugs: ["home", "removable-media"]
   xetex-unsafe:
     aliases: [ xetex-unsafe ]
-    command: usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/xetex-unsafe
+    command: bin/${SNAPCRAFT_ARCH_TRIPLET}/xetex-unsafe
     plugs: ["home", "removable-media"]
 
 parts:
-  texlive:
-    plugin: nil
-    build-packages:
-      - gzip
-      - perl-base
-      - wget
-    stage-packages:
-    - texlive-lang-japanese
-    override-build: |
-      craftctl default
-      #TARGET=https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2022/install-tl-unx.tar.gz
-      #TARGET=ftp://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2022/install-tl-unx.tar.gz
-      #TARGET=https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2023/install-tl-unx.tar.gz
-      #TARGET=ftp://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2023/install-tl-unx.tar.gz
-      # the mirror seems buggy, use the default mirror for now
-      TARGET=https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
-      wget ${TARGET}
-      zcat install-tl-unx.tar.gz | tar xf -
-      rm install-tl-unx.tar.gz
-      cd install-tl-*
-      cat << EOF > texlive.profile
-      selected_scheme scheme-custom
-      binary_${SNAPCRAFT_ARCH_TRIPLET} 1
-      collection-publishers 1
-      EOF
-      perl ./install-tl --no-interaction --texdir=$CRAFT_PART_INSTALL --profile texlive.profile
-    organize:
+    upmendex:
+        plugin: nil
+        stage-packages: # two versions of some packages now, but upmendex is installed
+            - texlive-lang-japanese
+    texlive:
+        after: [ upmendex ]
+        plugin: nil
+#    source: ./install-tl-unx.tar.gz
+        build-packages:
+            - gzip
+            - perl-base
+            - wget
+        override-build: |
+              craftctl default
+              #TARGET=https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/${SNAPCRAFT_PROJECT_VERSION}/install-tl-unx.tar.gz
+              #TARGET=ftp://ftp.math.utah.edu/pub/tex/historic/systems/texlive/${SNAPCRAFT_PROJECT_VERSION}/install-tl-unx.tar.gz
+              # the mirror seems buggy, use the default mirror for now
+              TARGET=https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+              wget ${TARGET}
+              zcat install-tl-unx.tar.gz | tar xf -
+              rm install-tl-unx.tar.gz
+              cd install-tl-*
+              cat << EOF > texlive.profile
+              selected_scheme scheme-custom
+              binary_${SNAPCRAFT_ARCH_TRIPLET} 1
+              collection-publishers 1
+              EOF
+              perl ./install-tl --no-interaction --texdir=$CRAFT_PART_INSTALL --profile texlive.profile
+        organize:
             # in the form of <old org>: <new org>
                 #"Rlogo.png" : snap/Rlogo.png
-                 "usr/local/texlive/2023/bin/x86_64-linux/*" : usr/local/texlive/2023/bin/${SNAPCRAFT_ARCH_TRIPLET}/
+#                 "usr/local/texlive/${SNAPCRAFT_PROJECT_VERSION}/bin/x86_64-linux/*" : usr/local/texlive/${SNAPCRAFT_PROJECT_VERSION}/bin/${SNAPCRAFT_ARCH_TRIPLET}/
+                 "bin/x86_64-linux/*" : bin/${SNAPCRAFT_ARCH_TRIPLET}/
